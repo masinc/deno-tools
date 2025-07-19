@@ -32,13 +32,13 @@ async function generateBinScripts() {
     // Generate PowerShell script
     const ps1Content = `#!/usr/bin/env pwsh
 $scriptPath = Join-Path $PSScriptRoot ".." "${scriptPath.replace(/\\/g, '/')}"
-deno run --allow-read --allow-write $scriptPath @args
+deno run --quiet --allow-read --allow-write $scriptPath @args
 `;
     
     // Generate Unix script (no extension)
     const unixContent = `#!/bin/bash
 SCRIPT_DIR="$(cd "$(dirname "\${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
-deno run --allow-read --allow-write "$SCRIPT_DIR/../${scriptPath}" "$@"
+deno run --quiet --allow-read --allow-write "$SCRIPT_DIR/../${scriptPath}" "$@"
 `;
     
     // Write scripts
