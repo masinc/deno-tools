@@ -1,11 +1,10 @@
 {
   "tasks": {
     "run:1zip": "deno run --allow-read --allow-write src/bin/1zip.ts",
-    "build": "deno run -A jsr:@masinc/deno-run-all 'build:*'",
-    "build:1zip": "deno compile --allow-read --allow-write -o dist/1zip src/bin/1zip.ts"
+    "generate-bin": "deno run --allow-read --allow-write scripts/generate-bin.ts"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "@zip-js/zip-js": "jsr:@zip-js/zip-js@^2.7.63"
+    "@zip.js/zip.js": "npm:@zip.js/zip.js@^2.7.64"
   }
 }

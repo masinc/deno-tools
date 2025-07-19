@@ -1,10 +1,10 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write
 
 import { parseArgs } from "node:util";
-import { ZipWriter, ZipReader, BlobReader, BlobWriter, configure } from "@zip-js/zip-js";
+import { ZipWriter, ZipReader, BlobReader, BlobWriter, configure } from "@zip.js/zip.js";
 import { join, extname, basename } from "jsr:@std/path";
 
-// Disable Web Workers for compatibility
+// Configure zip.js for better compatibility
 configure({
   useWebWorkers: false
 });
